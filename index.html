@@ -39,7 +39,7 @@
     }
     
     function copyText() {
-        let textToCopy = document.getElementById(`uuidField`)
+        let textToCopy = document.getElementById(`uuidField`).innerHTML
         textToCopy.select()
         document.execCommand("copy")
     }
