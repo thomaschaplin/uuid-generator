@@ -14,7 +14,7 @@
     <div>
         <h1 id="uuidField"></h1>
         <button class="btn btn-dark" onclick="randomUUID()">Generate New UUID</button>
-        <button class="btn btn-dark" onclick="copyText()">Copy</button>
+        <button class="btn btn-dark" onclick="copyText(`uuidField`)">Copy</button>
     </div>
 </body>
 
@@ -38,8 +38,8 @@
         )
     }
     
-    function copyText() {
-        let textToCopy = document.getElementById(`uuidField`).innerHTML
+    function copyText(t) {
+        let textToCopy = document.getElementById(`uuidField`)
         textToCopy.select()
         document.execCommand("copy")
     }
