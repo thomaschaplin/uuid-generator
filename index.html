@@ -14,7 +14,6 @@
     <div>
         <h1 id="uuidField"></h1>
         <button class="btn btn-dark" onclick="randomUUID()">Generate New UUID</button>
-        <button class="btn btn-dark" onclick="copyText(`uuidField`)">Copy</button>
     </div>
 </body>
 
@@ -36,12 +35,6 @@
         document.getElementById('uuidField').innerHTML = ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
             (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
         )
-    }
-    
-    function copyText(t) {
-        let textToCopy = document.getElementById(`uuidField`)
-        textToCopy.select()
-        document.execCommand("copy")
     }
 </script>
 
